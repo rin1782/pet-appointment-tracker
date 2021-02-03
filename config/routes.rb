@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :caretakers
   resources :events
   resources :pets
   resources :users
