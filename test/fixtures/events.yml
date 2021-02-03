@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet_id: 1
+  caretaker_id: 1
+  date: 2021-02-02
+  name: MyString
+
+two:
+  pet_id: 1
+  caretaker_id: 1
+  date: 2021-02-02
+  name: MyString
