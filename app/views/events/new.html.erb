@@ -10,13 +10,13 @@
     <%= f.text_field :date, :placeholder => 'dd/mm/yyyy' %>
     </div>
 
-    <p> Select your Caretaker </p>
+    <h4> Select your Caretaker </h4>
     <div>
     <%= f.collection_select :caretaker_id, Caretaker.all, :id, :name %>
 
     </div>
 
-    <p> Or Add a different type of Caretaker: </p>
+    <h4> Or Add a different type of Caretaker: </h4>
     <div>
         <%= f.fields_for :caretaker do |c| %>
             <%= c.label :title %>
