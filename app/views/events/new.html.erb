@@ -1,0 +1,30 @@
+<h1>Add a new event for today!</h1>
+
+<%= form_for(@event) do |f| %>
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => 'Appointment Type' %>
+    </div>
+    <div>
+    <%= f.label :date %>
+    <%= f.text_field :date, :placeholder => 'dd/mm/yyyy' %>
+    </div>
+
+    <p> Select your Caretaker </p>
+    <div>
+    <%= f.collection_select :caretaker_id, Caretaker.all, :id, :name %>
+
+    </div>
+
+    <p> Or Add a different type of Caretaker: </p>
+    <div>
+        <%= f.fields_for :caretaker do |c| %>
+            <%= c.label :title %>
+            <%= c.text_field :title, :placeholder => 'groomer/vet/trainer...' %>
+        <% end %>
+    </div>
+
+    <%= f.submit "Add Event" %>
+<% end %>
+
+  
