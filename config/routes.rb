@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
+  get '/logout' => 'sessions#destroy'
   
   resources :caretakers
   resources :events

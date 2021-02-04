@@ -2,24 +2,23 @@ class SessionsController < ApplicationController
     def welcome
     end
 
-    # get '/login' do
-    #     erb :'/owners/login'
-    # end
+    def new
 
-    # post '/login' do
-    #     user = Owner.find_by(username: params["username"])
-    #     if     
-    #         user && user.authenticate(params["password"])
-    #         session[:user_id] = user.id
-    #         redirect '/adoptables'
-    #     else
-    #         @error = "Account not found"
-    #         erb :'owners/login'
-    #     end 
-    # end
+    end
 
-    # get '/logout' do
-    #     session.clear
-    #     redirect '/'
-    # end
+    def create
+        @user = User.find_by(username: params[:user][:username])
+        if @user && @user.authenticate(params[:user][:password])
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            flash[:error] = "Invalid Username/Password combination"
+            redirect_to login_path
+        end
+    end
+
+    def destroy
+        session.delete(:user_id)
+        redirect_to '/'
+    end
 end
