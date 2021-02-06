@@ -1,0 +1,17 @@
+you're going to create a nested route for users and pets 
+
+resources :users do 
+  resources :pets 
+  end 
+
+
+  under the user showpage you're going to have a button that says "create pet"
+
+  it will then take you to a route that looks like this " /users/:user_id/pets/new"
+
+  This route will be a form. It's only purpose is to create a new pet 
+
+  once it creates a pet take it to the  pet index? or caretaker index or event index? which ever you prefer. 
+
+ 
+

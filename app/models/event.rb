@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-    belongs_to :pets
-    belongs_to :caretakers
-    accepts_nested_attributes_for :caretakers
+    belongs_to :pet
+    belongs_to :caretaker
 end
