@@ -8,9 +8,14 @@ class PetsController < ApplicationController
         @pet = Pet.new 
         @pet.name = params[:name]
         @pet.save
-        redirect_to_pets_path(@pet)
+        redirect_to pets_path(@pet)
     end
 
     def index
+        @pet = Pet.all
     end
+
+    def show
+        @pet = Pet.find(params[:id]) 
+    end 
 end

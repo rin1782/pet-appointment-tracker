@@ -1,12 +1,8 @@
 <h1>Welcome</h1>
 
-<h3>Create Pet<h3>
+<%= link_to "Create a Pet", new_pet_path %>
 
-<%= form_for(@pet) do |f| %>
-    <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, :placeholder => 'pet name' %>
-    </div>
-    <% end %>
+@user.pets.each do |p|
+    link_to "p.name", pet_path(p)
 
 

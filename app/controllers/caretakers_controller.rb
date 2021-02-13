@@ -10,7 +10,6 @@ class CaretakersController < ApplicationController
     
     def new
         @caretaker = Caretaker.new
-        @inputs = Input.all
     end
     
     def create
@@ -32,6 +31,7 @@ class CaretakersController < ApplicationController
         else
             @inputs = Input.all
             render :action => 'edit'
+        end
     end
     
     def delete

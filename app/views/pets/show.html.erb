@@ -1,4 +1,9 @@
 <h1>My Schedule</h1>
 
 <ul>
-<li> <%= @Event.all %>
+<%= @pet.events.each do |e| %>
+    e.date 
+    e.name
+end 
+
+link_to "create_event", create_event_path(pet_id) << # find the actual path to create event

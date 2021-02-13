@@ -1,8 +1,9 @@
 <h1>Add a Caretaker to the list</h1>
 
-<%= form_for(@caretaker) do |f| %>
-    <div>
+<%= form_for @caretaker do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title, :placeholder => 'Appointment Type' %>
-    </div>
+    <%= f.submit "Add Event" %>
+    <% end %>
     
+    <h3> <%= link_to "Back to Pets", pets_path %> </h3>

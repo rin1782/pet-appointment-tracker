@@ -1,6 +1,6 @@
 <h1>Add a new event for today!</h1>
 
-<%= form_for(@event) do |f| %>
+<%= form_for @event, url:pet_events_path(@pet) do |f| %>
     <div>
     <%= f.label :name %>
     <%= f.text_field :name, :placeholder => 'Appointment Type' %>
@@ -13,22 +13,6 @@
     <h4> Select your Caretaker </h4>
     <div>
     <%= f.collection_select :caretaker_id, Caretaker.all, :id, :title %>
-
-    </div>
-
-    <h4> Select your pet </h4>
-    <div>
-    <%= f.collection_select :pet_id, Pet.all, :id, :name %>
-
-    </div>
-
-    <h4> Or Add a different type of Caretaker: </h4>
-    <div>
-        <%= f.fields_for :caretaker do |c| %>
-            <%= c.label :title %>
-            <%= c.text_field :title, :placeholder => 'groomer/vet/trainer...' %>
-        <% end %>
-    </div>
 
     <%= f.submit "Add Event" %>
 <% end %>

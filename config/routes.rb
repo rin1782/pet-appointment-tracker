@@ -6,17 +6,16 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   get '/logout' => 'sessions#destroy'
+  
 
   match '/auth/:google_oauth2/callback' => 'sessions#google', via: [:get, :post]
   
-  
-  resources :caretakers do
-    resources :pets
+  resources :caretakers
+  resources :pets do
+    resources :events
   end
-  resources :events
-  resources :pets
-  resources :users
-  resources :users do 
+ 
+  resources :users, except:[:new,:create] do 
     resources :pets 
     end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
