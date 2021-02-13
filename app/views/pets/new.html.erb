@@ -1,1 +1,9 @@
-<h1>hey</h1>
+<h1>Add a new pet to the fam!</h1>
+
+<% form_for @Pet do |f| %>
+    <% f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.submit %>
+<% end %>

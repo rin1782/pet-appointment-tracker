@@ -1,3 +1,12 @@
 <h1>Welcome</h1>
 
+<h3>Create Pet<h3>
+
+<%= form_for(@pet) do |f| %>
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => 'pet name' %>
+    </div>
+    <% end %>
+
 

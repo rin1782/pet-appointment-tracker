@@ -9,13 +9,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  
+    <% if logged_in? %>
     <div>
-      <div><a href="/">Home</a></div>
-      <%= link_to "Log Out", logout_path, method: :delete %>
-      <%= link_to "Add Event", new_event_path %>
-      <%= link_to "Add Event", new_event_path %>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+        <li><%= link_to "Add Event", new_event_path %></li>
+        <li><%= link_to "Add Event", new_event_path %></li>
+      </ul>
     </div>
+    <% else %>
+    <div>
+      <ul>
+        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Signup", signup_path %></li>
+        <li><%= button_to "Sign up with Google", '/auth/google_oauth2', method: :post %></li>
+      </ul>
+    </div>
+    <% end %>
 
   <body>
     <%= yield %>

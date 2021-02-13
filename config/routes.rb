@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   get '/logout' => 'sessions#destroy'
+
+  match '/auth/:google_oauth2/callback' => 'sessions#google', via: [:get, :post]
+  
   
   resources :caretakers do
     resources :pets

@@ -14,4 +14,7 @@ resources :users do
   once it creates a pet take it to the  pet index? or caretaker index or event index? which ever you prefer. 
 
  
-
+<%= form_for @pet do |f| %>
+    <%= f.collection_select :pet_id, Pet.all, :id, :name %>
+    <%= f.submit %>
+  <% end %>

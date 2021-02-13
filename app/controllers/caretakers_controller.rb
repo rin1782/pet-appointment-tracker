@@ -14,7 +14,6 @@ class CaretakersController < ApplicationController
     end
     
     def create
-        byebug
         @caretaker = Caretaker.new
         @caretaker.title = params[:title]
         @caretaker.save
