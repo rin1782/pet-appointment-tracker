@@ -2,8 +2,10 @@
 
 <ul>
 <%= @pet.events.each do |e| %>
-    e.date 
-    e.name
-end 
+    <% e.date %>
+    <% e.name %>
+<% end %>
+</ul>
 
-link_to "create_event", create_event_path(pet_id) << # find the actual path to create event
+
+<%= link_to "Create Event", pet_events_path(pet_id) %>

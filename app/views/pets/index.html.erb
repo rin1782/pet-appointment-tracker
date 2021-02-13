@@ -1,1 +1,8 @@
-<%= @pet %>
+<h1>Select your pet</h1>
+
+<% @pet.each do |pet| %>
+    <ul>
+        <li><%= pet.name %></li>
+        <li><%= link_to 'Schedule', pet_event_path('pet_id', 'event_id') %></li> 
+    </ul>
+<% end %>

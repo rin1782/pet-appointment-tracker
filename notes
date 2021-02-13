@@ -18,3 +18,11 @@ resources :users do
     <%= f.collection_select :pet_id, Pet.all, :id, :name %>
     <%= f.submit %>
   <% end %>
+
+  # <ul>
+# <%= @pet.events.each do |e| %>
+#     e.date 
+#     e.name
+# end 
+
+# link_to "create_event", create_event_path(pet_id) << # find the actual path to create event

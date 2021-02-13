@@ -16,14 +16,14 @@ class EventsController < ApplicationController
     end
 
     def show
-        find the pet and find the event 
-        display  it on the html
+        @pet = Pet.find_by(id: params[:id])
+        @event = Event.find_by(id: params[:id]) 
     end
 
     private
 
     def event_params
-        params.require(:event).permit(:name, :date, :caretaker_id)
+        params.require(:event).permit(:name, :title, :date, :caretaker_id, :pet_id)
     end
 
 end
