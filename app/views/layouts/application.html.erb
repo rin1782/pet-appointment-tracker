@@ -13,9 +13,11 @@
     <div>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
         <li><%= link_to "Add Caretaker", new_caretaker_path %></li>
+        <li><%= link_to "Add Pet", new_pet_path %></li>
+        <li><%= link_to "Add Event to Schedule", new_pet_event_path(:pet_id) %></li>
         <li><%= link_to "Your Pets", pets_path %></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
       </ul>
     </div>
     <% else %>

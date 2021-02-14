@@ -1,6 +1,6 @@
 <h1>Add a new event for today!</h1>
 
-<%= form_for @event, url:pet_events_path(@pet) do |f| %>
+<%= form_for @event, url:pet_events_path(:pet_id) do |f| %>
     <div>
     <%= f.label :name %>
     <%= f.text_field :name, :placeholder => 'Appointment Type' %>

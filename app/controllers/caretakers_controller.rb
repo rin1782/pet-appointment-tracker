@@ -13,8 +13,9 @@ class CaretakersController < ApplicationController
     end
     
     def create
-        @caretaker = Caretaker.new
-        @caretaker.title = params[:title]
+        params
+        @caretaker = Caretaker.new(caretaker_params)
+        #@caretaker.title = params[:title]
         @caretaker.save
     end
     

@@ -2,7 +2,6 @@
 
 <% @pet.each do |pet| %>
     <ul>
-        <li><%= pet.name %></li>
-        <li><%= link_to 'Schedule', pet_event_path('pet_id', 'event_id') %></li> 
+        <li><%= link_to pet.name, pet_event_path(:pet_id, :event_id) %></li> 
     </ul>
 <% end %>

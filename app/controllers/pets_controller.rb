@@ -8,6 +8,7 @@ class PetsController < ApplicationController
         @pet = Pet.new 
         @pet.name = params[:name]
         @pet.save
+       
         redirect_to pets_path(@pet)
     end
 

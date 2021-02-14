@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
     def new
-        @pet = Pet.find(params[:pet_id])
+        @pet = Pet.find_by(id: params[:pet_id])
         @event = Event.new
     end
 
@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
     def show
         @pet = Pet.find_by(id: params[:id])
-        @event = Event.find_by(id: params[:id]) 
+        @event = Event.find_by(id: params[:id])
     end
 
     private
