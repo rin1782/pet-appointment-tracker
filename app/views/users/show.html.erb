@@ -2,7 +2,8 @@
 
 <%= link_to "Create a Pet", new_pet_path %>
 
-@user.pets.each do |p|
-    link_to "p.name", pet_path(p)
+<%= @user.pets.each do |p| %>
+    <%= link_to "p.name", pet_path(p) %>
+    <% end %>
 
 

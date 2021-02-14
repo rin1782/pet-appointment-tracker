@@ -15,7 +15,7 @@ class CaretakersController < ApplicationController
     def create
         params
         @caretaker = Caretaker.new(caretaker_params)
-        #@caretaker.title = params[:title]
+        @caretaker.title = params[:title]
         @caretaker.save
     end
     
@@ -43,7 +43,7 @@ class CaretakersController < ApplicationController
     private
 
     def caretaker_params
-        params.require(:caretakers).permit(:title)
+        params.require(:caretaker).permit(:title)
     end
 
 end
