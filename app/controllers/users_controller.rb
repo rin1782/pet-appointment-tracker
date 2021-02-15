@@ -12,8 +12,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to new_pet_path(@user)
         else
-            !@user
-            flash.now[:error] = @user.errors.full_messages
+            @error = @user.errors.full_messages
             render :new
         end
     end

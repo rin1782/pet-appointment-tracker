@@ -1,7 +1,4 @@
 <h1>Upcoming Schedule:</h1>
 
-<% @events.each do |e| %>
-    <%= e.name %>
-    <%= e.date %>
-    <%end%>
+<%= @pet.name %> has a <%= @event.name %> on <%= @event.date %> with <%= @event.caretaker.title %>
 

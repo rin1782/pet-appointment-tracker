@@ -1,5 +1,10 @@
-<h1> hi </h1>
+<h1> Schedule </h1>
 
+<ul>
 <% @events.each do |e| %>
-   <p> <%= e.name %> <%= e.date %> </p>
-   <%end%>
+    <li> <%= e.name %> </li>
+    <li> <%= e.date %> </li>
+    <%end%>
+</ul>
+
+<%= link_to "Create Event", new_pet_event_path(@pet) %>

@@ -13,10 +13,9 @@ class CaretakersController < ApplicationController
     end
     
     def create
-        params
         @caretaker = Caretaker.new(caretaker_params)
-        @caretaker.title = params[:title]
         @caretaker.save
+        redirect_to pets_path
     end
     
     def edit
