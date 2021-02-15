@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
         end
         if @user && @user.id
             session[:user_id] = @user.id
-            redirect_to user_pets_path(@user.id)
+            redirect_to new_pet_path(@user.id)
         else
             redirect_to "/login"
         end

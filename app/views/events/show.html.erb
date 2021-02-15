@@ -1,4 +1,7 @@
 <h1>Upcoming Schedule:</h1>
 
-<p>why</p>
+<% @events.each do |e| %>
+    <%= e.name %>
+    <%= e.date %>
+    <%end%>
 

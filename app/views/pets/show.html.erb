@@ -1,11 +1,11 @@
 <h1>My Schedule</h1>
 
 <ul>
-<%= @pet.events.each do |e| %>
-    <% e.date %>
-    <% e.name %>
+<% @pet.events.each do |e| %>
+    <%= e.date %>
+    <%= e.name %>
 <% end %>
 </ul>
 
 
-<%= link_to "Create Event", pet_events_path(pet_id) %>
+<%= link_to "Create Event", new_pet_event_path(@pet) %>

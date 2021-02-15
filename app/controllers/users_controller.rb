@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             redirect_to new_pet_path(@user)
         else
             !@user
-            @error = "Username/password not found or already in use"
+            flash.now[:error] = @user.errors.full_messages
             render :new
         end
     end
