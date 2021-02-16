@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-    def welcome
-    end
 
     def new
         @user = User.new
@@ -18,7 +16,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find_by(id: params[:id])
         redirect_to '/signup' if !@user
     end
 

@@ -12,10 +12,8 @@
     <% if logged_in? %>
     <div>
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><%= link_to "Home", users_path %></li>
         <li><%= link_to "Add Caretaker", new_caretaker_path %></li>
-        <li><%= link_to "Add Pet", new_pet_path %></li>
-        <li><%= link_to "Your Pets", pets_path %></li>
         <li><%= link_to "Log Out", logout_path, method: :delete %></li>
       </ul>
     </div>
