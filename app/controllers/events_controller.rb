@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
     def index
         @pet = Pet.find_by(id: params[:pet_id])
-        @events = @pet.events
+        @events = @pet.events.most_recent
     end
 
     def new
@@ -10,11 +10,13 @@ class EventsController < ApplicationController
     end
 
     def create 
+        @pet = Pet.find_by(id: params[:pet_id])
         @event = Event.new(event_params)
         @event.pet_id =  params[:pet_id]
         if @event.save
             redirect_to pet_event_path(@event.pet_id, @event)
         else
+            flash.now[:error] = @event.errors.full_messages
             render :new
         end
     end
@@ -22,6 +24,7 @@ class EventsController < ApplicationController
     def show
         @pet = Pet.find_by(id: params[:pet_id])
         @event = Event.find_by(id: params[:id])
+
     end
 
     private

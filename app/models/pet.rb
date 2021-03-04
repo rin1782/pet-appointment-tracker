@@ -3,5 +3,5 @@ class Pet < ApplicationRecord
   has_many :events
   has_many :caretakers, through: :events
 
-  #scope method
+  
 end

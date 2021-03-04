@@ -1,9 +1,8 @@
 <h1> Schedule </h1>
 
-<ul>
+<ul style="list-style-type:none;">
 <% @events.each do |e| %>
-    <li> <%= e.name %> </li>
-    <li> <%= e.date %> </li>
+    <li> <%= e.date %> - <%= e.name %> </li>
     <%end%>
 </ul>
 
